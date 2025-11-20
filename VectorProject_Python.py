@@ -6,28 +6,30 @@ def Coord_to_degrees():
     Lat_min = float(input("Enter Latitude Minutes: "))
     Lat_sec = float(input("Enter Latitude Seconds: "))
 
-    Lat_hem = input("Enter Hemisphere")
+    Lat_hem = input("Enter Hemisphere N/S: ")
     while Lat_hem not in ("N", "W", "S", "E"):
-         print("Invalid Hemisphere")
-    if Lat_hem == "N" or input() == "W":
-            hem_val = 1
-    elif  Lat_hem == "S" or input() == "E":
-            hem_val = -1
+         print("Invalid Hemisphere: ")
+         Lat_hem = input("Enter Hemisphere N/S: ")
+    if Lat_hem == "N":
+            lat_hem_val = 1
+    elif  Lat_hem == "S":
+            lat_hem_val = -1
 
     Lon_deg = float(input("Enter Longitude Degrees: "))
     Lon_min = float(input("Enter Longitude Minutes: "))
     Lon_sec = float(input("Enter Longitude Seconds: "))
 
-    Lon_hem = input("Enter Hemisphere")
+    Lon_hem = input("Enter Hemisphere E/W:")
     while Lon_hem not in ("N", "W", "S", "E"):
          print("Invalid Hemisphere")
-    if Lon_hem == "N" or input() == "W":
-            hem_val = 1
-    elif  Lon_hem == "S" or input() == "E":
-            hem_val = -1
+         Lon_hem = input("Enter Hemisphere E/W: ")
+    if Lon_hem == "E":
+            lon_hem_val = 1
+    elif  Lon_hem == "W":
+            lon_hem_val = -1
 
-    Lat_decimal = (Lat_deg + (Lat_min / 60) + (Lat_sec / 3600)) * Lat_hem
-    Lon_decimal = Lon_deg + (Lon_min / 60) + (Lon_sec / 3600) * Lon_hem
+    Lat_decimal = (Lat_deg + (Lat_min / 60) + (Lat_sec / 3600)) * lat_hem_val
+    Lon_decimal = (Lon_deg + (Lon_min / 60) + (Lon_sec / 3600)) * lon_hem_val
     print(f"Decimal Latitude: {Lat_decimal}")
     print(f"Decimal Longitude: {Lon_decimal}")
     print("You better write those down cuz I'm not saving them for you!")
