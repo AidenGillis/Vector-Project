@@ -50,6 +50,7 @@ def Resultant_Vector_VDF():
     Distance = (X_vector**2 + Y_vector**2)**0.5
     Angle_rad = math.atan2(Y_vector, X_vector)
     Angle_deg = math.degrees(Angle_rad)
+    print(f"i = {X_vector} km j = {Y_vector} km")
     print(f"Resultant Distance: {Distance} km")
     print(f"Resultant Angle (radians): {Angle_rad}")
     print(f"Resultant Angle (degrees): {Angle_deg}")
