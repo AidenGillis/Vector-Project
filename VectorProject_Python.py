@@ -33,6 +33,7 @@ def Coord_to_degrees():
     print(f"Decimal Latitude: {Lat_decimal}")
     print(f"Decimal Longitude: {Lon_decimal}")
     print("You better write those down cuz I'm not saving them for you!")
+    main()
 
 def Resultant_Vector_VDF():
     print("You have chosen to calculate the Resultant Vector using Vector Distance Formulas. First we need some information.")
@@ -56,6 +57,7 @@ def Resultant_Vector_VDF():
     print(f"Resultant Distance: {Distance} km")
     print(f"Resultant Angle (radians): {Angle_rad}")
     print(f"Resultant Angle (degrees): {Angle_deg}")
+    main()
 
 def Resultant_Vector_HF():
     print("You have chosen to calculate the Resultant Vector using Haversine Formulas. First we need some information.")
@@ -80,52 +82,56 @@ def Resultant_Vector_HF():
     print(f"Resultant Distance: {Distance} km")
     print(f"Resultant Angle (radians): {Angle_rad}")
     print(f"Resultant Angle (degrees): {Angle_deg}")
+    main()
 
-print("Welcome! Type 'start' to start. :)")
-begin = input()
-
-while begin != "start":
-    print("Type 'start' to start")
+def main():
+    print("Welcome! Type 'start' to start. :)")
     begin = input()
 
-if begin == "start":
-    print("Pick one of the options below:")
-    print("For Converting Coordinates to Degrees: Type '1'")
-    print("For Resultant Vector using Vector Distance Formulas: Type '2'")
-    print("For Resultant Vector using Haversine Formulas: Type '3'")
-    print("For exiting the program: Type 'exit'")
-    choice = input()
+    while begin != "start":
+        print("Type 'start' to start")
+        begin = input()
 
-    while choice not in ["1", "2", "3", "exit", "goblin"]:
-        print("Invalid choice. Please pick one of the options below:")
+    if begin == "start":
+        print("Pick one of the options below:")
         print("For Converting Coordinates to Degrees: Type '1'")
         print("For Resultant Vector using Vector Distance Formulas: Type '2'")
         print("For Resultant Vector using Haversine Formulas: Type '3'")
         print("For exiting the program: Type 'exit'")
         choice = input()
 
-    if choice == "1":
-        Coord_to_degrees()
-    elif choice == "2":
-        Resultant_Vector_VDF()
-    elif choice == "3":
-        Resultant_Vector_HF()
-    elif choice == "exit":
-        print("Exiting the program. Goodbye :)")
-    elif choice == "goblin":
-            print("           ⣠⣶⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
-            print("         ⣠⣾⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀ ")
-            print("   ⠀⠀⠀⠀⠀⢀⡼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀")
-            print(" ⠢⣤⣀⡀⠀⠀⠀⢿⣧⣄⡉⠻⢿⣿⣿⡿⠟⢉⣠⣼⡿⠀⠀⠀⠀⣀⣤⠔")
-            print("  ⠈⢻⣿⣶⠀⣷⠀⠉⠛⠿⠶⡴⢿⡿⢦⠶⠿⠛⠉⠀⣾⠀⣶⣿⡟⠁⠀")
-            print("⠀⠀⠀⠀⠻⣿⡆⠘⡇⠘⠷⠠⠦⠀⣾⣷⠀⠴⠄⠾⠃⢸⠃⢰⣿⠟⠀⠀⠀")
-            print("⠀⠀⠀⠀⠀⠋⢠⣾⣥⣴⣶⣶⣆⠘⣿⣿⠃⣰⣶⣶⣦⣬⣷⡄⠙⠀⠀⠀⠀⠀")
-            print("⠀⠀⠀⠀⠀⠀⢋⠛⠻⠿⣿⠟⢹⣆⠸⠇⣰⡏⠻⣿⠿⠟⠛⡙⠀⠀⠀⠀⠀⠀")
-            print("⠀⠀⠀⠀⠀⠀⠈⢧⡀⠠⠄⠀⠈⠛⠀⠀⠛⠁⠀⠠⠄⢀⡼⠁⠀⠀⠀⠀⠀⠀")
-            print("⠀⠀⠀⠀⠀⠀⠀⠈⢻⣦⡀⠃⠀⣿⡆⢰⣿⠀⠘⢀⣴⡟⠁⠀⠀⠀⠀⠀⠀⠀")
-            print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣦⡀⠘⠇⠸⠃⢀⣴⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀")
-            print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣷⣄⣠⣾⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
-            print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+        while choice not in ["1", "2", "3", "exit", "goblin"]:
+            print("Invalid choice. Please pick one of the options below:")
+            print("For Converting Coordinates to Degrees: Type '1'")
+            print("For Resultant Vector using Vector Distance Formulas: Type '2'")
+            print("For Resultant Vector using Haversine Formulas: Type '3'")
+            print("For exiting the program: Type 'exit'")
+            choice = input()
 
+        if choice == "1":
+            Coord_to_degrees()
+        elif choice == "2":
+            Resultant_Vector_VDF()
+        elif choice == "3":
+            Resultant_Vector_HF()
+        elif choice == "exit":
+            print("Exiting the program. Goodbye :)")
+            main()
+        elif choice == "goblin":
+                print("           ⣠⣶⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+                print("         ⣠⣾⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀ ")
+                print("   ⠀⠀⠀⠀⠀⢀⡼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀")
+                print(" ⠢⣤⣀⡀⠀⠀⠀⢿⣧⣄⡉⠻⢿⣿⣿⡿⠟⢉⣠⣼⡿⠀⠀⠀⠀⣀⣤⠔")
+                print("  ⠈⢻⣿⣶⠀⣷⠀⠉⠛⠿⠶⡴⢿⡿⢦⠶⠿⠛⠉⠀⣾⠀⣶⣿⡟⠁⠀")
+                print("⠀⠀⠀⠀⠻⣿⡆⠘⡇⠘⠷⠠⠦⠀⣾⣷⠀⠴⠄⠾⠃⢸⠃⢰⣿⠟⠀⠀⠀")
+                print("⠀⠀⠀⠀⠀⠋⢠⣾⣥⣴⣶⣶⣆⠘⣿⣿⠃⣰⣶⣶⣦⣬⣷⡄⠙⠀⠀⠀⠀⠀")
+                print("⠀⠀⠀⠀⠀⠀⢋⠛⠻⠿⣿⠟⢹⣆⠸⠇⣰⡏⠻⣿⠿⠟⠛⡙⠀⠀⠀⠀⠀⠀")
+                print("⠀⠀⠀⠀⠀⠀⠈⢧⡀⠠⠄⠀⠈⠛⠀⠀⠛⠁⠀⠠⠄⢀⡼⠁⠀⠀⠀⠀⠀⠀")
+                print("⠀⠀⠀⠀⠀⠀⠀⠈⢻⣦⡀⠃⠀⣿⡆⢰⣿⠀⠘⢀⣴⡟⠁⠀⠀⠀⠀⠀⠀⠀")
+                print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣦⡀⠘⠇⠸⠃⢀⣴⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+                print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣷⣄⣠⣾⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+                print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")
+
+main()
 
     
